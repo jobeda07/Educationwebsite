@@ -68,7 +68,7 @@ class TeacherDepartmentController extends Controller
      */
     public function edit(string $id)
     {
-         $item=TeacherDepartment::find($id);
+        $item=TeacherDepartment::find($id);
         return view('backend.teacherdepartment.create',compact('item'));
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Models\History;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class HistoryController extends Controller
 {
@@ -32,18 +33,39 @@ class HistoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'departname' => 'required',
+            'first_history' => 'required',
+            'second_history' => 'required',
+            'third_history' => 'required',
+            'first_image' => 'required|image|mimes:jpeg,jpg,png',
+            'second_image' => 'required|image|mimes:jpeg,jpg,png',
+            'third_image' => 'required|image|mimes:jpeg,jpg,png',
         ]);
-        try {          
-            $fileName = null;
-            if ($request->hasFile('departimage')) {
-                $fileName = time() . '.' . $request->file('departimage')->getclientOriginalExtension();
-                $request->file('departimage')->move(public_path('/uploads/Departmentimage/'), $fileName);
-                $fileName = "/uploads/Departmentimage/".$fileName;
+        try {
+                $first_image = null;
+                $second_image = null;
+                $third_image = null;
+            if ($request->hasFile('first_image') && $request->file('first_image')->isValid()) {
+                $first_image = time() . '.' . $request->file('first_image')->getClientOriginalExtension();
+                $request->file('first_image')->move(public_path('/uploads/Historyimage/'), $first_image);
+                $first_image = "/uploads/Historyimage/" . $first_image;
+            }
+            if ($request->hasFile('second_image') && $request->file('second_image')->isValid()) {
+                $second_image = time() . '.' . $request->file('second_image')->getClientOriginalExtension();
+                $request->file('second_image')->move(public_path('/uploads/Historyimage/'), $second_image);
+                $second_image = "/uploads/Historyimage/" . $second_image;
+            }
+            if ($request->hasFile('third_image') && $request->file('third_image')->isValid()) {
+                $third_image = time() . '.' . $request->file('third_image')->getClientOriginalExtension();
+                $request->file('third_image')->move(public_path('/uploads/Historyimage/'), $third_image);
+                $third_image = "/uploads/Historyimage/" . $third_image;
             }
             History::create([
-                'departname' => $request->departname,
-                'departimage' => $fileName,
+                'first_history' => $request->first_history,
+                'second_history' => $request->second_history,
+                'third_history' => $request->third_history,
+                'first_image' => $first_image,
+                'second_image' => $second_image,
+                'third_image' => $third_image,
             ]);
             //return $request();
             return redirect()->route('history.index');
@@ -75,26 +97,90 @@ class HistoryController extends Controller
     public function update(Request $request, string $id)
     {
          $request->validate([
-            'departname' => 'required',
+            'first_history' => 'required',
+            'second_history' => 'required',
+            'third_history' => 'required',
         ]);
         $updateitem=History::find($id);
-        try {          
-            if ($request->hasFile('departimage')) {
-                File::delete(public_path($updateitem->departimage));
-                $fileName = time() . '.' . $request->file('departimage')->getclientOriginalExtension();
-                $request->file('departimage')->move(public_path('/uploads/Departmentimage'), $fileName);
-                $fileName = "/uploads/Departmentimage/".$fileName;
-                $updateitem->departimage=$fileName;
-                $updateitem->update([
-                    'departname' => $request->departname,
-                    'departimage' => $fileName,
+        try {
+            
+            if($request->hasFile('first_image')){
+                 if ($request->hasFile('first_image')) {
+                File::delete(public_path($updateitem->first_image));
+                $first_image = time() . '.' . $request->file('first_image')->getclientOriginalExtension();
+                $request->file('first_image')->move(public_path('/uploads/Historyimage'), $first_image);
+                $first_image = "/uploads/Historyimage/" . $first_image;
+                }
+                  $updateitem->update([
+                    'first_history' => $request->first_history,
+                    'second_history' => $request->second_history,
+                    'third_history' => $request->third_history,
+                    'first_image' => $first_image,
                 ]);
-             }
-                else{
+            }
+            elseif($request->hasFile('second_image')){
+                if ($request->hasFile('second_image')) {
+                File::delete(public_path($updateitem->second_image));
+                $second_image = time() . '.' . $request->file('second_image')->getclientOriginalExtension();
+                $request->file('second_image')->move(public_path('/uploads/Historyimage'), $second_image);
+                $second_image = "/uploads/Historyimage/" . $second_image;
+                }
+                  $updateitem->update([
+                    'first_history' => $request->first_history,
+                    'second_history' => $request->second_history,
+                    'third_history' => $request->third_history,
+                    'second_image' => $second_image,
+                ]);
+            }
+            elseif($request->hasFile('third_image')){
+                if ($request->hasFile('third_image')) {
+                File::delete(public_path($updateitem->third_image));
+                $third_image = time() . '.' . $request->file('third_image')->getclientOriginalExtension();
+                $request->file('third_image')->move(public_path('/uploads/Historyimage'), $third_image);
+                $third_image = "/uploads/Historyimage/" . $third_image;
+                }
+                  $updateitem->update([
+                    'first_history' => $request->first_history,
+                    'second_history' => $request->second_history,
+                    'third_history' => $request->third_history,
+                    'third_image' => $third_image,
+                ]);
+            }
+            elseif ($request->hasFile('first_image','second_image','third_image')){
+                if ($request->hasFile('first_image')) {
+                File::delete(public_path($updateitem->first_image));
+                $first_image = time() . '.' . $request->file('first_image')->getclientOriginalExtension();
+                $request->file('first_image')->move(public_path('/uploads/Historyimage'), $first_image);
+                $first_image = "/uploads/Historyimage/" . $first_image;
+                }
+                if ($request->hasFile('second_image')) {
+                File::delete(public_path($updateitem->second_image));
+                $second_image = time() . '.' . $request->file('second_image')->getclientOriginalExtension();
+                $request->file('second_image')->move(public_path('/uploads/Historyimage'), $second_image);
+                $second_image = "/uploads/Historyimage/" . $second_image;
+                }
+                if ($request->hasFile('third_image')) {
+                File::delete(public_path($updateitem->third_image));
+                $third_image = time() . '.' . $request->file('third_image')->getclientOriginalExtension();
+                $request->file('third_image')->move(public_path('/uploads/Historyimage'), $third_image);
+                $third_image = "/uploads/Historyimage/" . $third_image;
+                }
                     $updateitem->update([
-                    'departname' => $request->departname,
+                    'first_history' => $request->first_history,
+                    'second_history' => $request->second_history,
+                    'third_history' => $request->third_history,
+                    'first_image' => $first_image,
+                    'second_image' => $second_image,
+                    'third_image' => $third_image,
                 ]);
-        }
+            }
+            else{
+                  $updateitem->update([
+                'first_history' => $request->first_history,
+                'second_history' => $request->second_history,
+                'third_history' => $request->third_history,
+            ]);
+            }
             return redirect()->route('history.index');
         } catch (Exception $e) {
             return redirect()->back();
@@ -106,9 +192,7 @@ class HistoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $item=History::find($id);
-        File::delete(public_path($item->departimage));
-         $item->delete();
-         return redirect()->route('history.index');
+        $item=History::find($id)->delete();
+        return redirect()->route('history.index');
     }
 }

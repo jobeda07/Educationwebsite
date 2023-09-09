@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\backend\GalleryController;
@@ -8,20 +9,23 @@ use App\Http\Controllers\backend\HistoryController;
 use App\Http\Controllers\backend\TeacherController;
 use App\Http\Controllers\backend\TeacherDepartmentController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Route::get('/', function () {
+//     return view('frontend.pages.home')->name('home');
+// });
+// frontend route
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'home')->name('home');
+    Route::get('/allteacher', 'teacherpage')->name('teacher.page');
+    Route::get('/allhistory', 'history')->name('history.page');
+    Route::get('/allnotice', 'notice')->name('notice.page');
+    Route::get('/principle', 'principle')->name('principle.page');
+    Route::get('/allgallery', 'gallery')->name('gallery.page');
+    Route::get('/contact', 'contact')->name('contact.page');
+    
 });
+
 
 Route::get('/dashboard', function () {
     return view('backend.partials.dashboard');

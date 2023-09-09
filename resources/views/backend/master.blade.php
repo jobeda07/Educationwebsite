@@ -22,7 +22,7 @@
     <link href="{{ '/backend/vendor/datatables/dataTables.bootstrap4.min.css' }}" rel="stylesheet">
     {{-- bootstarp 5 icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+    {{-- text editor css --}}
     <style>
         .close {
             color: white;
@@ -100,7 +100,15 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ '/backend/js/demo/datatables-demo.js' }}"></script>
-
+    {{-- text editor js --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>
