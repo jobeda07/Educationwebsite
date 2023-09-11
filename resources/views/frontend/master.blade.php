@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./frontend/cs/slick.css">
     <link rel="stylesheet" href="./frontend/cs/style.css">
     <link rel="stylesheet" href="./frontend/cs/teacher.css">
+    @stack('css');
 </head>
 
 <body>
@@ -37,10 +38,10 @@
 
         // ScrollReveal().reveal('.reveal-text, .revel-img1',{ delay: 400 ,origin:'right'});
         // ScrollReveal().reveal('.revel-img,  .reveal-text1', { delay: 500 ,origin:'left'});
-        ScrollReveal().reveal('.news', {
-            delay: 500,
-            origin: 'top'
-        });
+        // ScrollReveal().reveal('.news', {
+        //     delay: 500,
+        //     origin: 'top'
+        // });
     </script>
 
 

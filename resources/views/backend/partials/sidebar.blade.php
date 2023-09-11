@@ -87,7 +87,7 @@
      <hr class="sidebar-divider">
      <!-- Nav Item - Tables -->
      <li class="nav-item">
-         <a class="nav-link" href="tables.html">
+         <a class="nav-link" href="{{ route('news.index') }}">
              <span class="iconbox"><i class="bi bi-newspaper"></i></span>
              <span>News List</span></a>
      </li>

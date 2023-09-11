@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\NoticeController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\HistoryController;
@@ -23,6 +24,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/principlePage', 'principle')->name('principle.page');
     Route::get('/allgallery', 'gallery')->name('gallery.page');
     Route::get('/contact', 'contact')->name('contact.page');
+    Route::get('/single/news/{title}', 'single_newspage')->name('single.newspage');
     
 });
 
@@ -46,5 +48,6 @@ Route::middleware('auth')->group(function(){
        'history' => HistoryController::class,
        'notice' => NoticeController::class,
        'principle' => PrincipleController::class,
+       'news' => NewsController::class,
     ]);
 });

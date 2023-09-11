@@ -33,89 +33,17 @@
                 </div>
             </div>
             <div class="row pb-5">
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Achievements</h5>
-                            <a href="news.html">BUET secured 185th position in the 2022 QS World University Rankings by
-                                Subject</a>
-                            <p>Area</p>
+                @foreach ($news as $item)
+                    <div class="col-lg-6 pt-2 pb-3">
+                        <div class="news">
+                            <img src="{{ asset($item->image) }}" alt="">
+                            <div class="news-overlay">
+                                <a href="{{ route('single.newspage', $item->title) }}">{{ $item->title }}</a>
+                                <p>Area</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img1.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Alumni</h5>
-                            <h6>Seven Teachers of BUET received the Research Excellence Award of BUET's Forum</h6>
-                            <p>86</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img2.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Development</h5>
-                            <h6>BUET is admitting new intake in the Nanomaterials and Ceramic Engineering (NCE)</h6>
-                            <p>Department for the first time</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-2">
-                    <div class="news">
-                        <img src="./schl-img/img3.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Grants</h5>
-                            <h6>বুয়েট এর শিক্ষকদের সময় উপযোগী এবং চতুর্থ শিল্প বিপ্লব মোকাবিলায় সহায়ক ১০টি </h6>
-                            <p>গবেষণা প্রস্তাবনার রাইজের মাধ্যমে ফান্ড প্রদান</p>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img8.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Achievements</h5>
-                            <h6>A Journal Paper from BUET received Elsevier Smart Health Journal Best Paper</h6>
-                            <p>Award 2022</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img5.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Collaboration</h5>
-                            <h6>ASCE-EWRI and IWFM, BUET successfully organized the 11th IPWE conference</h6>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img6.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>National</h5>
-                            <h6>জাতীয় পরিবেশ পদক ২০২০ পেয়েছে বুয়েট</h6>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-2 pb-3">
-                    <div class="news">
-                        <img src="./schl-img/img7.jpg" alt="">
-                        <div class="news-overlay">
-                            <h5>Others</h5>
-                            <h6>বুয়েটে শুদ্ধাচার বিষয়ক র‌্যালি অনুষ্ঠিত</h6>
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
