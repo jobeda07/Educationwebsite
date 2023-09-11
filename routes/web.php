@@ -4,23 +4,23 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\backend\NoticeController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\HistoryController;
 use App\Http\Controllers\backend\TeacherController;
+use App\Http\Controllers\backend\PrincipleController;
 use App\Http\Controllers\backend\TeacherDepartmentController;
 
 
 
-// Route::get('/', function () {
-//     return view('frontend.pages.home')->name('home');
-// });
+
 // frontend route
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'home')->name('home');
     Route::get('/allteacher', 'teacherpage')->name('teacher.page');
     Route::get('/allhistory', 'history')->name('history.page');
     Route::get('/allnotice', 'notice')->name('notice.page');
-    Route::get('/principle', 'principle')->name('principle.page');
+    Route::get('/principlePage', 'principle')->name('principle.page');
     Route::get('/allgallery', 'gallery')->name('gallery.page');
     Route::get('/contact', 'contact')->name('contact.page');
     
@@ -44,5 +44,7 @@ Route::middleware('auth')->group(function(){
        'teacherdepartment' => TeacherDepartmentController::class,
        'gallery' => GalleryController::class,
        'history' => HistoryController::class,
+       'notice' => NoticeController::class,
+       'principle' => PrincipleController::class,
     ]);
 });

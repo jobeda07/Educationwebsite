@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class NoticeController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.

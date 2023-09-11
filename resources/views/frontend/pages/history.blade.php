@@ -3,7 +3,7 @@
     <section id="history">
         <div class="container">
             <div class="row justify-content-center text-center pt-5 pb-5">
-                <h2>Brief History of Notre Dame College</h2>
+                <h2>Brief History of XYZ College</h2>
                 <div class="col-lg-6 pt-5 pb-5 text-start">
                     <div class="history-text">
                         <h6>{{ $data->first_history }}

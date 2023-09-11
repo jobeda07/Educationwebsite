@@ -12,7 +12,7 @@
                             <div class="box-1">
                                 <h3>Mail us</h3>
                                 <h5>
-                                    notredamecollege@ndc.edu.bd
+                                    xyzcollege@xyz.edu.bd
                                 </h5>
                             </div>
                         </div>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="box-2 pt-4">
-                        <marquee behavior="scroll" direction="left">Notre Dame College, Dhaka</marquee>
+                        <marquee behavior="scroll" direction="left">XYZ College, Dhaka</marquee>
 
                     </div>
                 </div>

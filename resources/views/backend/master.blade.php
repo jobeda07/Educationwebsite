@@ -22,12 +22,60 @@
     <link href="{{ '/backend/vendor/datatables/dataTables.bootstrap4.min.css' }}" rel="stylesheet">
     {{-- bootstarp 5 icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    {{-- text editor css --}}
+
+    @stack('css')
     <style>
         .close {
             color: white;
             opacity: .9;
         }
+
+        span.iconbox {
+            background: #656565;
+            padding: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .sidebar.toggled .nav-item .nav-link {
+            padding: 0px 20px !important;
+            margin-bottom: 10px;
+        }
+
+        .sidebar.toggled .nav-item .nav-link span {
+            font-size: 14px !important;
+            display: block;
+            font-weight: bold;
+            color: white;
+        }
+
+        .sidebar-dark .nav-item .nav-link i {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .sidebar .nav-item .nav-link span {
+            font-size: 15px;
+            display: inline;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .sidebar .nav-item .collapse .collapse-inner .collapse-item,
+        .sidebar .nav-item .collapsing .collapse-inner .collapse-item {
+            font-weight: bold;
+        }
+
+        /*
+        .sidebar .toggled .nav-item {
+            position: relative;
+            margin-bottom: -44px;
+        }
+
+        .sidebar .toggled .sidebar-dark hr.sidebar-divider {
+            border-top: none;
+        } */
     </style>
 </head>
 
@@ -109,6 +157,7 @@
                 console.error(error);
             });
     </script>
+    @stack('js')
 </body>
 
 </html>
