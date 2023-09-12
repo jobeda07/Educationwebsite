@@ -58,7 +58,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="item-2">
-                                <img src="./frontend/schl-img/75_years_logo.jpg" alt="">
+                                <img src="{{ asset('frontend/schl-img/75_years_logo.jpg') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-9">
@@ -70,12 +70,12 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="item-3">
-                        <img src="./frontend/schl-img/logo.png" alt="">
+                        <img src="{{ asset('frontend/schl-img/logo.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="item-4">
-                        <img src="./frontend/schl-img/mujib_100.png" alt="">
+                        <img src="{{ asset('frontend/schl-img/mujib_100.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Administration
+                        <a class="nav-link active" aria-current="page" href="{{ route('allnewsView.page') }}">News/Event
                         </a>
                     </li>
                     <li class="nav-item">

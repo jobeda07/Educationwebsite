@@ -16,9 +16,13 @@ class HomeController extends Controller
         $news=NewsModel::orderBy('created_at', 'desc')->take(6)->get();
         return view ('frontend.pages.home',compact('news'));
     }
-    public function single_newspage($title){
-        $singlenewspage = NewsModel::find($title);
-        return view ('frontend.pages.singlenewspage',compact('singlenewspage'));
+    public function singlenewsview($title){
+        $singlenewsview =NewsModel::where('title', 'LIKE', "%{$title}%")->first();
+        return view ('frontend.pages.singlenewsview',compact('singlenewsview'));
+    }
+    public function allnewsView(){
+        $allnewsView = NewsModel::all();
+        return view ('frontend.pages.allnewsshow',compact('allnewsView'));
     }
     public function teacherpage(){
         $data=Teacher::orderBy('created_at', 'asc')->get();

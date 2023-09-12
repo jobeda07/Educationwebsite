@@ -24,7 +24,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/principlePage', 'principle')->name('principle.page');
     Route::get('/allgallery', 'gallery')->name('gallery.page');
     Route::get('/contact', 'contact')->name('contact.page');
-    Route::get('/single/news/{title}', 'single_newspage')->name('single.newspage');
+    Route::get('/allnewsView', 'allnewsView')->name('allnewsView.page');
+    Route::get('/singlenewsview/{title}', 'singlenewsview')->name('singlenewsview.page');
     
 });
 

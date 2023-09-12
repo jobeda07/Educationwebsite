@@ -32,18 +32,21 @@
                     </div>
                 </div>
             </div>
-            <div class="row pb-5">
+            <div class="row pb-4">
                 @foreach ($news as $item)
                     <div class="col-lg-6 pt-2 pb-3">
                         <div class="news">
                             <img src="{{ asset($item->image) }}" alt="">
                             <div class="news-overlay">
-                                <a href="{{ route('single.newspage', $item->title) }}">{{ $item->title }}</a>
-                                <p>Area</p>
+                                <a href="{{ route('singlenewsview.page', $item->title) }}">{{ $item->title }}</a>
+
                             </div>
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="text-center pb-5">
+                <a href="{{ route('allnewsView.page') }}" class="btn btn-dark">View more</a>
             </div>
         </div>
     </section>
@@ -88,7 +91,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="mock-img">
-                        <img src="./schl-img/mock.jpg" alt="">
+                        <img src="{{ asset('frontend/schl-img/mock.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
