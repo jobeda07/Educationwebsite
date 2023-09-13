@@ -53,6 +53,7 @@
     <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
     <script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('frontend/js/fixed.js') }}"></script>
+    @stack('js');
 </body>
 
 </html>

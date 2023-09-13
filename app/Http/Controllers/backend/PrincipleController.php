@@ -6,6 +6,7 @@ use App\Models\Principle;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PrincipleController extends Controller
 {
@@ -33,9 +34,9 @@ class PrincipleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'image' => 'required',
-            'description' => 'required',
+            'name' => 'required|max:200',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
+            'description' => 'required|max:8000',
         ]);
         try {          
             $fileName = null;
@@ -49,6 +50,7 @@ class PrincipleController extends Controller
                 'image' => $fileName,
                 'description' => $request->description,
             ]);
+            Alert::success('Successfully Principle info added');
             return redirect()->route('principle.index');
         } catch (Exception $e) {
             return redirect()->back();
@@ -78,8 +80,9 @@ class PrincipleController extends Controller
     public function update(Request $request, string $id)
     {
          $request->validate([
-            'name' => 'required',
-            'description' => 'required',
+            'name' => 'required|max:200',
+            'description' => 'required|max:8000',
+            'image' => 'image|mimes:jpeg,png,jpg',
         ]);
         $updateitem=Principle::find($id);
         try {          
@@ -101,6 +104,7 @@ class PrincipleController extends Controller
                     'description' => $request->description,
                 ]);
         }
+           Alert::success('Successfully Principle Info Update');
             return redirect()->route('principle.index');
         } catch (Exception $e) {
             return redirect()->back();

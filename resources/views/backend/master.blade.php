@@ -80,7 +80,12 @@
 </head>
 
 <body id="page-top">
-
+    {{-- error message --}}
+    {{-- @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <p class="alert alert-danger">{{ $error }}</p>
+        @endforeach
+    @endif --}}
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -157,6 +162,9 @@
                 console.error(error);
             });
     </script>
+
+    @include('sweetalert::alert')
+
     @stack('js')
 </body>
 

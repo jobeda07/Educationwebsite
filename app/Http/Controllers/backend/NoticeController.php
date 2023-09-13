@@ -6,6 +6,7 @@ use App\Models\Notice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NoticeController extends Controller
 {
@@ -32,7 +33,7 @@ class NoticeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|max:250',
             'notice_pdf' => 'required|mimes:pdf|max:2048',
         ]);
 
@@ -47,6 +48,7 @@ class NoticeController extends Controller
             'title' => $request->title,
             'notice_pdf' => $fileName,
         ]);
+        Alert::success('Successfully Add Notice');
         return back();
     }
 
@@ -82,6 +84,7 @@ class NoticeController extends Controller
          $item=Notice::find($id);
          File::delete(public_path($item->notice_pdf));
          $item->delete();
+          Alert::success('Opps! Notice deleted');
          return redirect()->route('notice.index');  
     }
 }

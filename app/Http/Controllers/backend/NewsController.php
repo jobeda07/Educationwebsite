@@ -6,6 +6,7 @@ use App\Models\NewsModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NewsController extends Controller
 {
@@ -33,9 +34,9 @@ class NewsController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-            'title' => 'required',
-            'image' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:300',
+            'image' => 'required|image|mimes:jpeg,png,jpg|',
+            'description' => 'required|max:5000',
         ]);
         try {          
             $fileName = null;
@@ -49,8 +50,11 @@ class NewsController extends Controller
                 'image' => $fileName,
                 'description' => $request->description,
             ]);
+            Alert::success('Successfully News Submitted', 'Success Message');
+
             return redirect()->route('news.index');
         } catch (Exception $e) {
+            Alert::error($e->getMessage(), 'Server Error');
             return redirect()->back();
         }
     }
@@ -78,8 +82,9 @@ class NewsController extends Controller
     public function update(Request $request, string $id)
     {
          $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:300',
+            'image' => 'image|mimes:jpeg,png,jpg',
+            'description' => 'required|max:5000',
         ]);
         $updateitem=NewsModel::find($id);
         try {          
@@ -101,8 +106,10 @@ class NewsController extends Controller
                     'description' => $request->description,
                 ]);
         }
+        Alert::success('Successfully News Updated');
             return redirect()->route('news.index');
         } catch (Exception $e) {
+            Alert::error($e->getMessage(), 'Server Error');
             return redirect()->back();
         }
     }
@@ -115,6 +122,7 @@ class NewsController extends Controller
         $item=NewsModel::find($id);
         File::delete(public_path($item->image));
         $item->delete();
+        Alert::success('Opps! News deleted');
         return redirect()->route('news.index');      
     }
 }

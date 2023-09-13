@@ -6,6 +6,7 @@ use App\Models\Gallery;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GalleryController extends Controller
 {
@@ -32,7 +33,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            //'gimage' => 'required|image|mimes:jpeg,png,jpg|max:12288'
+            'gimage' => 'required|image|mimes:jpeg,png,jpg'
         ]);
         try {   
 
@@ -49,8 +50,11 @@ class GalleryController extends Controller
                     Gallery::create(['gimage' => $filename]);
                 }
             }
+                
+            Alert::success( 'Successfully Images Add');
             return redirect()->route('gallery.index');
         } catch (Exception $e) {
+            Alert::error($e->getMessage(), 'Server Error');
             return redirect()->back();
         }
     }

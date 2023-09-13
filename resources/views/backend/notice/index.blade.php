@@ -87,11 +87,17 @@
                             <label for="">Notice Title</label>
                             <input type="text" name="title" class="form-control" id="" accept=".pdf"
                                 required>
+                            @error('title')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">Notice Pdf</label>
                             <input type="file" name="notice_pdf" class="form-control" id="" accept=".pdf"
                                 required>
+                            @error('notice_pdf')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                 </div>
                 <div class="modal-footer">

@@ -6,6 +6,7 @@ use App\Models\History;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HistoryController extends Controller
 {
@@ -33,9 +34,9 @@ class HistoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_history' => 'required',
-            'second_history' => 'required',
-            'third_history' => 'required',
+            'first_history' => 'required|max:1500',
+            'second_history' => 'required|max:1500',
+            'third_history' => 'required|max:1500',
             'first_image' => 'required|image|mimes:jpeg,jpg,png',
             'second_image' => 'required|image|mimes:jpeg,jpg,png',
             'third_image' => 'required|image|mimes:jpeg,jpg,png',
@@ -67,9 +68,10 @@ class HistoryController extends Controller
                 'second_image' => $second_image,
                 'third_image' => $third_image,
             ]);
-            //return $request();
+            Alert::success('Successfully Add History');
             return redirect()->route('history.index');
         } catch (Exception $e) {
+            Alert::error($e->getMessage(), 'Server Error');
             return redirect()->back();
         }
     }
@@ -97,9 +99,12 @@ class HistoryController extends Controller
     public function update(Request $request, string $id)
     {
          $request->validate([
-            'first_history' => 'required',
-            'second_history' => 'required',
-            'third_history' => 'required',
+            'first_history' => 'required|max:1500',
+            'second_history' => 'required|max:1500',
+            'third_history' => 'required|max:1500',
+            'first_image' => 'image|mimes:jpeg,jpg,png',
+            'second_image' => 'image|mimes:jpeg,jpg,png',
+            'third_image' => 'image|mimes:jpeg,jpg,png',
         ]);
         $updateitem=History::find($id);
         try {
@@ -181,8 +186,10 @@ class HistoryController extends Controller
                 'third_history' => $request->third_history,
             ]);
             }
+            Alert::success('Successfully History Update');
             return redirect()->route('history.index');
         } catch (Exception $e) {
+            Alert::error($e->getMessage(), 'Server Error');
             return redirect()->back();
         }
     }
@@ -192,7 +199,7 @@ class HistoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $item=History::find($id)->delete();
+        // $item=History::find($id)->delete();
         return redirect()->route('history.index');
     }
 }

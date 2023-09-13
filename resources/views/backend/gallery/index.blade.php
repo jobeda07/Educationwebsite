@@ -34,8 +34,10 @@
                     @csrf()
                     <div class="form-group">
                         <label for="">Gallery Image</label>
-                        <input type="file" name="gimage[]" class="form-control" id="" multiple accept="image/*"
-                            required>
+                        <input type="file" name="gimage[]" class="form-control" id="" multiple required>
+                        @error('gimage')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

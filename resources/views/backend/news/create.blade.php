@@ -14,15 +14,24 @@
                             <label for=""> Title</label>
                             <input type="text" name="title" value="{{ old('title') }}" class="form-control"
                                 id="" aria-describedby="" placeholder="Enter News Title" required>
+                            @error('title')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">Image</label>
                             <input type="file" name="image" class="form-control" id="">
+                            @error('image')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">Description</label>
                             <textarea name="description" id="" class=" summernote" required cols="80" rows="50"
-                                value="{{ old('title') }}"></textarea>
+                                placeholder="Write description here">{{ old('description') }}</textarea>
+                            @error('description')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -33,16 +42,26 @@
                         <div class="form-group">
                             <label for=""> Name</label>
                             <input type="text" value="{{ $item->title }}" name="title" class="form-control"
-                                id="" aria-describedby="emailHelp" placeholder="Enter Principle name" required>
+                                id="" aria-describedby="emailHelp" placeholder="Enter News title here" required>
+                            @error('title')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">Image</label>
                             <input type="file" name="image" class="form-control" id="">
+                            @error('image')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                             <img src="{{ $item->image }}" alt="" width="70" class="mt-2">
                         </div>
                         <div class="form-group">
                             <label for="">Description</label>
-                            <textarea name="description" id="" class=" summernote" required cols="80" rows="50">{!! $item->description !!}</textarea>
+                            <textarea name="description" id="" class=" summernote" required cols="80" rows="50"
+                                placeholder="write description here">{!! $item->description !!}</textarea>
+                            @error('description')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>

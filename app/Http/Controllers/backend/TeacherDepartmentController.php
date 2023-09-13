@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use App\Models\TeacherDepartment;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TeacherDepartmentController extends Controller
 {
@@ -35,6 +36,7 @@ class TeacherDepartmentController extends Controller
     {
         $request->validate([
             'departname' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg',
         ]);
         try {          
             $fileName = null;
@@ -47,7 +49,7 @@ class TeacherDepartmentController extends Controller
                 'departname' => $request->departname,
                 'departimage' => $fileName,
             ]);
-            //return $request();
+            Alert::success('Successfully Add Teacher Department');
             return redirect()->route('teacherdepartment.index');
         } catch (Exception $e) {
             return redirect()->back();
@@ -79,6 +81,7 @@ class TeacherDepartmentController extends Controller
     {
         $request->validate([
             'departname' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg',
         ]);
         $updateitem=TeacherDepartment::find($id);
         try {          
@@ -98,6 +101,7 @@ class TeacherDepartmentController extends Controller
                     'departname' => $request->departname,
                 ]);
         }
+            Alert::success('Successfully Update Teacher Department');
             return redirect()->route('teacherdepartment.index');
         } catch (Exception $e) {
             return redirect()->back();
@@ -113,6 +117,7 @@ class TeacherDepartmentController extends Controller
         $item=TeacherDepartment::find($id);
         File::delete(public_path($item->departimage));
          $item->delete();
+          Alert::success('Successfully Delete Teacher Department');
          return redirect()->route('teacherdepartment.index');      
     }
 }
