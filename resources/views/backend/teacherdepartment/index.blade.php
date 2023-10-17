@@ -16,7 +16,8 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Teacher Department Name</th>
+                            <th>Teacher Department</th>
+                            <th>Teacher Department Bn</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -36,6 +37,7 @@
                             <tr>
                                 <td> {{ $key + 1 }} </td>
                                 <td>{{ $item->departname }}</td>
+                                <td>{{ $item->departname_bn }}</td>
                                 <td>
                                     <img src="{{ asset($item->departimage) }}" width="60" alt="">
                                 </td>

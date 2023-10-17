@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('principles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('name_bn');
+            $table->string('designation');
             $table->string('image');
             $table->text('description');
             $table->timestamps();

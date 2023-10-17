@@ -7,10 +7,10 @@
                     <div class="contact-item">
 
                         <div class="contact-number">
-                            <h6>Mirpur Cantonment,Dhaka-1216, Bangladesh</h6>
-                            <h6>Phone: +8809666790799</h6>
-                            <h6>Fax: 88-02-8000443</h6>
-                            <h6>Email: info@bup.edu.bd</h6>
+                            <h6>মিরপুর সেনানিবাস, ঢাকা-১২১৬, বাংলাদেশ</h6>
+                            <h6>ফোনঃ +৮৮০৯৬৬৬৭৯০৭৯৯</h6>
+                            <h6>৮৮-০২-৮০০০০৪৪৩</h6>
+                            <h6>ইমেইল: info@bup.edu.bd</h6>
                         </div>
                     </div>
                 </div>
@@ -18,14 +18,14 @@
                     <div class="contact-item2">
 
                         <div class="contact-number">
-                            <h6>Research at BUP</h6>
-                            <h6>BUP Journal</h6>
-                            <h6>Anti Sexual Harassment</h6>
-                            <h6>Web Mail</h6>
-                            <h6>Downloads</h6>
-                            <h6>Library</h6>
-                            <h6>APA</h6>
-                            <h6>Privacy Policy</h6>
+                            <h6>হোম</h6>
+                            <h6>ইতিহাস</h6>
+                            <h6>প্রিন্সিপাল বার্তা</h6>
+                            <h6>নোটিশ</h6>
+                            <h6>ভর্তি ফরম</h6>
+                            <h6>ভর্তি তথ্য</h6>
+                            <h6>একাডেমিক</h6>
+                            <h6>যোগাযোগ</h6>
                         </div>
                     </div>
                 </div>
@@ -34,15 +34,14 @@
                     <div class="contact-item">
 
                         <div class="contact-number">
-                            <h6>About the University</h6>
-                            <h6>Career
-                            </h6>
-                            <h6>Procurement</h6>
-                            <h6>NOC</h6>
-                            <h6>Admission</h6>
-                            <h6>MPhil Programs</h6>
-                            <h6>PhD Programs</h6>
-                            <h6>Ongoing Research</h6>
+                            <h6>হোম</h6>
+                            <h6>ইতিহাস</h6>
+                            <h6>প্রিন্সিপাল বার্তা</h6>
+                            <h6>নোটিশ</h6>
+                            <h6>ভর্তি ফরম</h6>
+                            <h6>ভর্তি তথ্য</h6>
+                            <h6>একাডেমিক</h6>
+                            <h6>যোগাযোগ</h6>
 
                         </div>
                     </div>

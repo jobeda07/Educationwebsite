@@ -24,6 +24,8 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Name Bn</th>
+                            <th>Designation</th>
                             <th>Image</th>
                             <th>description</th>
                         </tr>
@@ -32,6 +34,8 @@
                         <tr>
                             <td> {{ $key + 1 }} </td>
                             <td>{{ $item->name }}</td>
+                            <td>{{ $item->name_bn }}</td>
+                            <td>{{ $item->designation }}</td>
                             <td>
                                 <img src="{{ asset($item->image) }}" width="60" alt="">
                             </td>

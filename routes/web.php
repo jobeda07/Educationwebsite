@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\HistoryController;
 use App\Http\Controllers\backend\TeacherController;
 use App\Http\Controllers\backend\PrincipleController;
+use App\Http\Controllers\backend\BisePrincipleController;
 use App\Http\Controllers\backend\TeacherDepartmentController;
 
 
@@ -48,5 +49,7 @@ Route::middleware('auth')->group(function(){
        'notice' => NoticeController::class,
        'principle' => PrincipleController::class,
        'news' => NewsController::class,
+       'setting' => SettingController::class,
+       'biseprinciple' => BisePrincipleController::class,
     ]);
 });

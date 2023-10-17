@@ -35,8 +35,10 @@ class PrincipleController extends Controller
     {
         $request->validate([
             'name' => 'required|max:200',
+            'name_bn' => 'required|max:200',
             'image' => 'required|image|mimes:jpeg,png,jpg',
             'description' => 'required|max:8000',
+            'designation' => 'required',
         ]);
         try {          
             $fileName = null;
@@ -47,6 +49,8 @@ class PrincipleController extends Controller
             }
             Principle::create([
                 'name' => $request->name,
+                'name_bn' => $request->name_bn,
+                'designation' => $request->designation,
                 'image' => $fileName,
                 'description' => $request->description,
             ]);
@@ -81,7 +85,9 @@ class PrincipleController extends Controller
     {
          $request->validate([
             'name' => 'required|max:200',
-            'description' => 'required|max:8000',
+            'name_bn' => 'required|max:200',
+            'designation' => 'required',
+            'designation' => 'required|max:8000',
             'image' => 'image|mimes:jpeg,png,jpg',
         ]);
         $updateitem=Principle::find($id);
@@ -94,6 +100,8 @@ class PrincipleController extends Controller
                 $updateitem->image=$fileName;
                 $updateitem->update([
                     'name' => $request->name,
+                    'name_bn' => $request->name_bn,
+                    'designation' => $request->designation,
                     'image' => $fileName,
                     'description' => $request->description,
                 ]);
@@ -101,6 +109,8 @@ class PrincipleController extends Controller
                 else{
                     $updateitem->update([
                     'name' => $request->name,
+                    'name_bn' => $request->name_bn,
+                    'designation' => $request->designation,
                     'description' => $request->description,
                 ]);
         }

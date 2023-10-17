@@ -2,7 +2,7 @@
 @section('content')
     <section id="notice">
         <div class="container">
-            <div class="row justify-content-center text-center pt-5 pb-5">
+            <div class="row justify-content-center text-center pb-5">
                 <div class="col-lg-11">
                     <h2 style="color: black; font-size: 40px; font-weight: bold; padding-bottom: 40px;"> Notice Lists</h2>
                     <table>
@@ -26,6 +26,7 @@
                                 <td>{{ $item->created_at->format('F j, Y') }}</td>
                             </tr>
                         @endforeach
+
                     </table>
 
                 </div>

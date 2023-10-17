@@ -36,6 +36,7 @@ class TeacherDepartmentController extends Controller
     {
         $request->validate([
             'departname' => 'required',
+            'departname_bn' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg',
         ]);
         try {          
@@ -47,6 +48,7 @@ class TeacherDepartmentController extends Controller
             }
             TeacherDepartment::create([
                 'departname' => $request->departname,
+                'departname_bn' => $request->departname_bn,
                 'departimage' => $fileName,
             ]);
             Alert::success('Successfully Add Teacher Department');
@@ -81,6 +83,7 @@ class TeacherDepartmentController extends Controller
     {
         $request->validate([
             'departname' => 'required',
+            'departname_bn' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg',
         ]);
         $updateitem=TeacherDepartment::find($id);
@@ -93,12 +96,14 @@ class TeacherDepartmentController extends Controller
                 $updateitem->departimage=$fileName;
                 $updateitem->update([
                     'departname' => $request->departname,
+                    'departname_bn' => $request->departname_bn,
                     'departimage' => $fileName,
                 ]);
              }
                 else{
                     $updateitem->update([
                     'departname' => $request->departname,
+                    'departname_bn' => $request->departname_bn,
                 ]);
         }
             Alert::success('Successfully Update Teacher Department');
@@ -116,8 +121,8 @@ class TeacherDepartmentController extends Controller
     {   
         $item=TeacherDepartment::find($id);
         File::delete(public_path($item->departimage));
-         $item->delete();
-          Alert::success('Successfully Delete Teacher Department');
-         return redirect()->route('teacherdepartment.index');      
+        $item->delete();
+        Alert::success('Successfully Delete Teacher Department');
+        return redirect()->route('teacherdepartment.index');      
     }
 }

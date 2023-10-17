@@ -23,7 +23,7 @@ a{
 #tem h1{
     text-align: center;
     padding: 40px 20px;
-    background-color: #fcf9f9;
+    background-color: #b5b4b4;
     margin-top: 40px;
     color: rgb(7, 6, 6);
     font-weight: 700;
@@ -33,13 +33,12 @@ a{
 
 /* principal start */
 #principal{
-    background: rgba(26, 147, 143, 0.427);
-background: radial-gradient(circle, rgba(26, 147, 143, 0.3) 15%, rgba(9, 28, 104, 0.348) 100%);
-color: rgb(5, 5, 5);
-}
+    background: rgba(230, 232, 232, 0.427);
+    color: rgb(5, 5, 5);
+    }
 .principal-img img{
     height: 300px;
-    width: 300px;
+    /* width: 300px; */
   
 }
 .pricipal-text{
@@ -61,23 +60,25 @@ color: rgb(5, 5, 5);
     color: white;
     font-size: 32px;
     border-bottom: 4px solid hsl(240, 100%, 99%);
-    width: 350px;
+    width: 231px;
 }
 /* principal end */
 
 /* history start */
 #history{
-    background: rgba(26, 147, 143, 0.427);
-background: radial-gradient(circle, rgba(26, 147, 143, 0.3) 15%, rgba(9, 28, 104, 0.348) 100%);
-color: rgb(9, 9, 9);
-padding-top: 60px;
-}
+    background: white;
+    color: rgb(9, 9, 9);
+    padding-top: 60px;
+    }
 .history-text h6{
     color: rgb(6, 6, 6);
-    font-weight: 200;
+    font-weight: 400;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
+}
+.hist-img img{
+    height: 300px;
 }
 /* history end */
 
@@ -86,29 +87,30 @@ padding-top: 60px;
 #from{
     /* background: rgb(26,147,143);
     background: radial-gradient(circle, rgba(26,147,143,0.9836309523809523) 15%, rgba(9,28,104,1) 100%); */
-    background: rgba(26, 147, 143, 0.427);
-    background: radial-gradient(circle, rgba(26, 147, 143, 0.3) 15%, rgba(9, 28, 104, 0.348) 100%);
+    background: white;
     padding: 50px 0;
     color: black;
 }
 .from-text{
     color: rgb(6, 6, 6);
+    margin-top: 110px;
 }
 .from-text h3{
     padding-bottom: 30px;
 }
 .from-text h6{
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 /* from end */
 
 /* new portfolio part start  */
 
 #portfolio{
-    padding: 120px 0;
-    background: linear-gradient(to left, rgba(3, 10, 3, 0.815),rgba(0, 15, 0, 0.774)), url(../schl-img/back.jpg) no-repeat center / cover;
+    padding: 45px 0;
+    background: linear-gradient(to left, rgba(10, 10, 10, 0.815),rgba(14, 14, 14, 0.774)), url(../schl-img/back.jpg) no-repeat center / cover;
     /* clip-path: polygon(0 0%, 100% 0, 100% 94%, 0% 100%); */
     position: relative;
+    background-attachment: fixed;
 }
 .port-head{
 
@@ -156,7 +158,7 @@ color: aliceblue;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color:rgba(61, 210, 208, 0.332);
+    /* background-color:rgba(61, 210, 208, 0.332); */
   }
   .overlay2{
     position: absolute;
@@ -170,9 +172,8 @@ color: aliceblue;
 
 /* notice start */
 #notice{
-    padding: 100px 0;
-    background: rgba(26, 147, 143, 0.427);
-    background: radial-gradient(circle, rgba(26, 147, 143, 0.3) 15%, rgba(9, 28, 104, 0.348) 100%);
+    padding: 35px 0;
+    background: white;
 }
 
 
@@ -211,6 +212,7 @@ table {
     -ms-border-radius:5px ;
     -o-border-radius:5px ;
     width: 150px;
+    margin: 20px 0;
 }
 .teacher-main:hover{
     box-shadow: 0px -4px 20px 0px rgba(52,52,158,0.75);
@@ -219,7 +221,7 @@ table {
 }
 #teacher{
     padding: 60px 0;
-    background-color: #1bb4b934;
+    background-color: #fff;
 }
 .teacher-main h4{
     font-size: 16px;
@@ -232,11 +234,10 @@ table {
 
 #news-detail{
     padding: 100px 0;
-    background: rgba(26, 147, 143, 0.427);
-    background: radial-gradient(circle, rgba(26, 147, 143, 0.3) 15%, rgba(9, 28, 104, 0.348) 100%);
+    background: white;
 }
 .details-news{
-    background-color: aliceblue;
+    background-color: #fff;
     border: 1px solid black;
     padding: 30px 90px;
 }
@@ -258,3 +259,40 @@ table {
    
 }
 /* news details end */
+
+/* Style inputs */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: black;
+}
+
+input[type=submit] {
+    background-color: #0b0b0b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+@media screen and (max-width: 600px) {
+    .from-text {
+        color: rgb(6, 6, 6);
+        margin-top: -40px;
+    }
+    .column,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}

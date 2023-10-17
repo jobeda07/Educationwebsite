@@ -151,6 +151,19 @@
         .days li.active {
             color: white;
         }
+
+        .calandersty {
+            width: 440px;
+            height: 550px;
+            border-radius: 10px;
+            box-shadow: -3px 6px 20px #ddd;
+        }
+
+        @media(max-width:575.98px) {
+            .calandersty {
+                width: 350px;
+            }
+        }
     </style>
     <div class="container-fluid">
 
@@ -276,8 +289,7 @@
 
             <!-- Pie Chart -->
             <div class="col-xl-4 col-lg-5">
-                <div class="wrapper text-center"
-                    style="width:440px;height:550px;border-radius:10px;box-shadow:-3px 6px  20px #ddd">
+                <div class="wrapper text-center calandersty" style="">
                     <header>
                         <p class="current-date ms-2"></p>
                         <div class="icons">

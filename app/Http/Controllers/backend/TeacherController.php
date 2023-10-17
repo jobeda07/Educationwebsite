@@ -38,6 +38,7 @@ class TeacherController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'name_bn' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg',
             'email' => 'required',
             'number' => 'required|numeric|digits:11',
@@ -54,6 +55,7 @@ class TeacherController extends Controller
             }
             Teacher::create([
                 'name' => $request->name,
+                'name_bn' => $request->name_bn,
                 'image' => $fileName,
                 'email' => $request->email,
                 'number' => $request->number,
@@ -93,6 +95,7 @@ class TeacherController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'name_bn' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg',
             'email' => 'required',
             'number' => 'required|numeric|digits:11',
@@ -110,6 +113,7 @@ class TeacherController extends Controller
                 $updateitem->image=$fileName;
                 $updateitem->update([
                     'name' => $request->name,
+                    'name_bn' => $request->name_bn,
                     'image' => $fileName,
                     'email' => $request->email,
                     'number' => $request->number,
@@ -121,6 +125,7 @@ class TeacherController extends Controller
                 else{
                     $updateitem->update([
                         'name' => $request->name,
+                        'name_bn' => $request->name_bn,
                         'email' => $request->email,
                         'number' => $request->number,
                         'address' => $request->address,

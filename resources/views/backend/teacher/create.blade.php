@@ -2,8 +2,8 @@
 @section('content')
     <style>
         /* input[type=number] {
-                                                                                                                        -moz-appearance: textfield;
-                                                                                                                    } */
+                                                                                                                                            -moz-appearance: textfield;
+                                                                                                                                        } */
         input[type=number] {
             appearance: textfield;
             /* Additional styles if needed */
@@ -19,7 +19,12 @@
                         <div class="form-group">
                             <label for=""> Name <span style="color:red;">*</span></label>
                             <input type="text" name="name" value="{{ old('name') }}" class="form-control"
-                                id="" aria-describedby="" placeholder="Enter department name" required>
+                                id="" aria-describedby="" placeholder="Enter name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Name Bangla <span style="color:red;">*</span></label>
+                            <input type="text" name="name_bn" value="{{ old('name_bn') }}" class="form-control"
+                                id="" aria-describedby="" placeholder="Enter name Bangla" required>
                         </div>
                         <div class="form-group">
                             <label for="">Image <span style="color:red;">*</span></label>
@@ -66,9 +71,14 @@
                                 id="" aria-describedby="" placeholder="Enter Name" required>
                         </div>
                         <div class="form-group">
+                            <label for=""> Name Bangla<span style="color:red;">*</span></label>
+                            <input type="text" name="name_bn" value="{{ $item->name_bn }}" class="form-control"
+                                id="" aria-describedby="" placeholder="Enter Name Bangla" required>
+                        </div>
+                        <div class="form-group">
                             <label for="">Image</label>
                             <input type="file" name="image" class="form-control" id="">
-                            <img src="{{ asset($item->image) }}" class="mt-2" alt="">
+                            <img src="{{ asset($item->image) }}" class="mt-2" alt="" width="150">
                         </div>
                         <div class="form-group">
                             <label for=""> Email <span style="color:red;">*</span></label>

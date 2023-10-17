@@ -21,7 +21,7 @@
 
      <!-- Divider -->
      <hr class="sidebar-divider">
-     <!-- Nav Item - Pages Collapse Menu -->
+     <!-- Nav Item  -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
              aria-expanded="true" aria-controls="collapseTwo">
@@ -33,11 +33,12 @@
                  <a class="collapse-item" href="{{ route('teacherdepartment.index') }}">Teacher Department</a>
                  <a class="collapse-item" href="{{ route('teacher.index') }}">Teacher</a>
                  <a class="collapse-item" href="{{ route('principle.index') }}">Principle</a>
+                 <a class="collapse-item" href="{{ route('biseprinciple.index') }}">Bise Principle</a>
              </div>
          </div>
      </li>
      <hr class="sidebar-divider">
-     <!-- Nav Item - Utilities Collapse Menu -->
+     <!-- Nav Item -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
              aria-expanded="true" aria-controls="collapseUtilities">
@@ -85,12 +86,21 @@
              <span>Notice</span></a>
      </li>
      <hr class="sidebar-divider">
-     <!-- Nav Item - Tables -->
+     <!-- Nav Item -->
      <li class="nav-item">
          <a class="nav-link" href="{{ route('news.index') }}">
              <span class="iconbox"><i class="bi bi-newspaper"></i></span>
              <span>News List</span></a>
      </li>
+
+     <!-- Divider -->
+     <hr class="sidebar-divider d-none d-md-block">
+     <!-- Nav Item  -->
+     {{-- <li class="nav-item">
+         <a class="nav-link" href="{{ route('setting.index') }}">
+             <span class="iconbox"><i class="bi bi-newspaper"></i></span>
+             <span>Setting</span></a>
+     </li> --}}
 
      <!-- Divider -->
      <hr class="sidebar-divider d-none d-md-block">

@@ -16,6 +16,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Name Bn</th>
                             <th>Image</th>
                             <th>Department</th>
                             <th>Position</th>
@@ -30,6 +31,7 @@
                             <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $item->name }}</td>
+                                <td>{{ $item->name_bn }}</td>
                                 <td><img src="{{ asset($item->image) }}" width="60" alt=""></td>
                                 {{-- <td>{{ $item->dname }}</td> --}}
                                 <td>{{ App\Models\TeacherDepartment::find($item->department_id)?->departname }}</td>

@@ -16,6 +16,16 @@
                                 aria-describedby="emailHelp" placeholder="Enter Principle name" required>
                         </div>
                         <div class="form-group">
+                            <label for=""> Name Bangla</label>
+                            <input type="text" name="name_bn" class="form-control" id=""
+                                aria-describedby="emailHelp" placeholder="Enter Principle Name in Bangla" required>
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Designation</label>
+                            <input type="text" name="designation" class="form-control" id=""
+                                aria-describedby="emailHelp" placeholder="Enter designation" required>
+                        </div>
+                        <div class="form-group">
                             <label for="">Image</label>
                             <input type="file" name="image" class="form-control" id="">
                         </div>
@@ -33,6 +43,16 @@
                             <label for=""> Name</label>
                             <input type="text" value="{{ $item->name }}" name="name" class="form-control"
                                 id="" aria-describedby="emailHelp" placeholder="Enter Principle name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Name Bangla</label>
+                            <input type="text" value="{{ $item->name_bn }}" name="name_bn" class="form-control"
+                                id="" aria-describedby="emailHelp" placeholder="Enter Principle name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Designation</label>
+                            <input type="text" name="designation" value="{{ $item->name_bn }}" class="form-control"
+                                id="" aria-describedby="emailHelp" placeholder="Enter designation" required>
                         </div>
                         <div class="form-group">
                             <label for="">Image</label>

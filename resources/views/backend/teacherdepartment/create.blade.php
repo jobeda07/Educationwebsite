@@ -13,6 +13,11 @@
                                 aria-describedby="emailHelp" placeholder="Enter department name" required>
                         </div>
                         <div class="form-group">
+                            <label for="">Department Name</label>
+                            <input type="text" name="departname_bn" class="form-control" id=""
+                                aria-describedby="emailHelp" placeholder="Enter department name in Bangla" required>
+                        </div>
+                        <div class="form-group">
                             <label for="">Image (if you want to show in website)</label>
                             <input type="file" name="departimage" class="form-control" id="">
                         </div>
@@ -27,7 +32,12 @@
                             <label for="">Department Name</label>
                             <input type="text" name="departname" value="{{ $item->departname }}" class="form-control"
                                 id="" aria-describedby="emailHelp" placeholder="Enter department name" required>
-
+                        </div>
+                        <div class="form-group">
+                            <label for="">Department Name Bangla</label>
+                            <input type="text" name="departname_bn" value="{{ $item->departname_bn }}"
+                                class="form-control" id="" aria-describedby="emailHelp"
+                                placeholder="Enter department name in bangla" required>
                         </div>
                         <div class="form-group">
                             <label for="">Image (if you want to show in website)</label>

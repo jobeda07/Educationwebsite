@@ -14,7 +14,9 @@ class HomeController extends Controller
 {
     public function home(){
         $news=NewsModel::orderBy('created_at', 'desc')->take(6)->get();
-        return view ('frontend.pages.home',compact('news'));
+        $notice=Notice::orderBy('created_at', 'desc')->take(6)->get();
+        $principle=Principle::latest()->first();
+        return view ('frontend.pages.home',compact('news','notice','principle'));
     }
     public function singlenewsview($title){
         $singlenewsview =NewsModel::where('title', 'LIKE', "%{$title}%")->first();
