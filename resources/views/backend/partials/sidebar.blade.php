@@ -21,6 +21,15 @@
 
      <!-- Divider -->
      <hr class="sidebar-divider">
+     <!-- Nav Item - Dashboard -->
+     <li class="nav-item active">
+         <a class="nav-link" href="{{ route('class.index') }}">
+             <span class="iconbox"><i class="bi bi-cassette"></i></span>
+             <span>Class</span></a>
+     </li>
+
+     <!-- Divider -->
+     <hr class="sidebar-divider">
      <!-- Nav Item  -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"

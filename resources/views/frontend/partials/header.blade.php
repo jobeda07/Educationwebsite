@@ -93,7 +93,8 @@
                              ভর্তি
                          </button>
                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                             <li><a class="dropdown-item" href="admission.html">ভর্তি ফরম</a></li>
+                             <li><a class="dropdown-item" href="{{ route('admission.form') }}" target="_blank">ভর্তি
+                                     ফরম</a></li>
                              <li><a class="dropdown-item" href="admisson-info.html">ভর্তি তথ্য</a></li>
                              <li><a class="dropdown-item" href="admission-fee.html">ভর্তি ফি</a></li>
                          </ul>

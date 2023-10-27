@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('result_exels', function (Blueprint $table) {
+        Schema::create('class_models', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('result_exels');
+        Schema::dropIfExists('class_models');
     }
 };

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\backend\NewsController;
+use App\Http\Controllers\backend\ClassController;
 use App\Http\Controllers\backend\NoticeController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\HistoryController;
@@ -27,6 +28,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact.page');
     Route::get('/allnewsView', 'allnewsView')->name('allnewsView.page');
     Route::get('/singlenewsview/{title}', 'singlenewsview')->name('singlenewsview.page');
+    // Admission form
+    Route::get('/admission-form', 'admission_form')->name('admission.form');
+    Route::post('/admission-store', 'admission_store')->name('admission.store');
     
 });
 
@@ -51,5 +55,6 @@ Route::middleware('auth')->group(function(){
        'news' => NewsController::class,
        'setting' => SettingController::class,
        'biseprinciple' => BisePrincipleController::class,
+       'class' => ClassController::class,
     ]);
 });

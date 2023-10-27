@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('years');
             $table->text('description');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

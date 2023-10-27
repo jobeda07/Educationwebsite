@@ -19,7 +19,7 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td><i class="fa-solid fa-file-pdf fa-2xl"></i></td>
                                 <td><a href="{{ asset($item->notice_pdf) }}" download
-                                        style="color:#fff;text-decoration:underline">{{ $item->title }}
+                                        style="color:#000;text-decoration:underline">{{ $item->title }}
                                         <span><i class="bi bi-download"
                                                 style="color:red;font:bolder;font-size:20px;margin-left:8px !important"></i></span></a>
                                 </td>
